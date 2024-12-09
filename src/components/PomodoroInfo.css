@@ -1,12 +1,48 @@
-.buttonInfo
-{
-    color: #571c11;  
+ .pomodoro-info {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+     color: #ac6356;
+}
+
+ .historic {
+    font-size: 1.2rem;
+    line-height: 1.6;
     text-align: center;  
-    text-decoration: none;  
-    font-style: italic;  
-    display: block;  
-    margin-top: 5rem;  
+    margin: 5rem auto;  
+    max-width: 80rem;  
+    color: #333;  
+}
+
+.back-button-container {
+    text-align: center;
+    margin-top:10rem;  
+}
+
+.back-button {
+    background-color: #ac6356;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #c47b6a; 
     cursor: pointer;  
-    transition: color 0.3s ease;
-    font-size:2rem;
+}
+
+.spacer {
+    margin: 3rem 0;  
+}
+
+/* Style pour l'image */
+.pomodoro-image {
+    display: block;
+    margin: 8rem auto;   
+    max-width: 100%;     
+    height: auto;       
 }

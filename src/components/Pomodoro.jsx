@@ -6,6 +6,7 @@ import alarmSound from "/Assets/Alarm.wav"; // Assurez-vous que le chemin est co
 const Pomodoro = () => {
     const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes en secondes
     const [isRunning, setIsRunning] = useState(false);
+    const [isFullScreen, setIsFullScreen] = useState(false); // Nouvel état pour le plein écran
     const audioRef = useRef(null); // Référence pour le son
 
     useEffect(() => {
@@ -27,11 +28,13 @@ const Pomodoro = () => {
 
     const startTimer = () => {
         setIsRunning(!isRunning);
+        setIsFullScreen(true); // Passer en plein écran lorsque démarré
     };
 
     const resetTimer = () => {
         setTimeLeft(25 * 60); // Réinitialisation à 25 minutes
         setIsRunning(false);
+        setIsFullScreen(false); // Retirer le plein écran lorsque réinitialisé
     };
 
     const formatTime = (seconds) => {
@@ -41,7 +44,7 @@ const Pomodoro = () => {
     };
 
     return (
-        <div className="pomodoro-wrapper">
+        <div className={`pomodoro-wrapper ${isFullScreen ? "full-screen" : ""}`}> {/* Applique la classe conditionnellement */}
             <audio ref={audioRef} src={alarmSound} /> {/* Utilisez le fichier importé */}
             <div className="Pomodoro">Pomodoro</div>
             <div className="pomodoro-container">
@@ -59,7 +62,6 @@ const Pomodoro = () => {
                 <Link to="/info" className="buttonInfo">En savoir plus sur la méthode Pomodoro</Link>
             </div>
         </div>
-        
     );
 };
 
